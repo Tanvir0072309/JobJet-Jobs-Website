@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services — JobJet</title>
+<title>Privacy Policy — JobJet</title>
 <link rel="icon" href="../images/logo.png">
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -372,122 +372,137 @@
     z-index: 2;
   }
 
-  /* Grid */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
+  /* Policy content (Privacy Policy / Terms of Service) */
+  .policy-content {
+    max-width: 780px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 48px;
   }
 
-  .card {
+  .policy-content h2 {
+    font-size: 1.25rem;
+    margin-top: 34px;
+    margin-bottom: 12px;
+  }
+
+  .policy-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .policy-content p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 600px) {
+    .policy-content {
+      padding: 28px 22px;
+      border-radius: var(--radius-sm);
+    }
+
+    .policy-content h2 {
+      font-size: 1.1rem;
+    }
+
+    .policy-content p {
+      font-size: 0.95rem;
+    }
+  }
+
+  /* Split layout */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .split h2 {
+    margin-bottom: 18px;
+  }
+
+  .split p {
+    color: var(--text-dim);
+    font-size: 16.5px;
+    margin-bottom: 18px;
+    line-height: 1.7;
+  }
+
+  /* Value list */
+  .value-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .value-list li {
     background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    padding: 34px 28px;
+    padding: 24px 26px;
     transition: var(--transition);
     box-shadow: var(--shadow-sm);
+    position: relative;
+    padding-left: 58px;
   }
 
-  .card:hover {
-    transform: translateY(-6px);
+  .value-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 22px;
+    top: 24px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    transition: var(--transition);
+  }
+
+  .value-list li:hover {
+    transform: translateY(-4px);
     border-color: #c7d2fe;
     box-shadow: var(--shadow-lg);
     background: white;
   }
 
-  .card .icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
-    background: var(--primary-light);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    color: var(--primary);
-    transition: var(--transition);
-  }
-
-  .card:hover .icon {
+  .value-list li:hover::before {
     background: var(--primary);
     color: white;
-    transform: scale(1.05);
   }
 
-  .card .icon::before {
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 1.6rem;
-  }
-
-  .card:nth-child(1) .icon::before { content: '\f002'; }
-  .card:nth-child(2) .icon::before { content: '\f544'; }
-  .card:nth-child(3) .icon::before { content: '\f0e0'; }
-  .card:nth-child(4) .icon::before { content: '\f15c'; }
-  .card:nth-child(5) .icon::before { content: '\f0c5'; }
-  .card:nth-child(6) .icon::before { content: '\f201'; }
-
-  .card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  .value-list strong {
+    display: block;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
+    margin-bottom: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.01em;
   }
 
-  .card p {
+  .value-list span {
+    display: block;
     color: var(--text-soft);
     font-size: 0.95rem;
-    line-height: 1.65;
-  }
-
-  /* Steps */
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 24px;
-    margin-top: 40px;
-  }
-
-  .step {
-    background: rgba(248, 249, 252, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 36px 26px;
-    transition: var(--transition);
-    text-align: center;
-  }
-
-  .step:hover {
-    transform: translateY(-5px);
-    background: white;
-    border-color: #c7d2fe;
-    box-shadow: var(--shadow-md);
-  }
-
-  .num {
-    font-size: 2.6rem;
-    font-weight: 800;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--primary);
-    line-height: 1;
-    margin-bottom: 20px;
-    letter-spacing: -0.03em;
-  }
-
-  .step h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: var(--text);
-  }
-
-  .step p {
-    color: var(--text-soft);
-    font-size: 0.93rem;
+    line-height: 1.6;
   }
 
   /* CTA section */
@@ -664,17 +679,14 @@
     .page-hero {
       padding: 140px 0 40px;
     }
+
+    .split {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
   }
 
   @media (max-width: 600px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-
-    .steps {
-      grid-template-columns: 1fr;
-    }
-
     .footer-inner {
       flex-direction: column;
       text-align: center;
@@ -702,6 +714,15 @@
 
     .global-bg .dot {
       display: none;
+    }
+
+    .value-list li {
+      padding: 22px 22px 22px 54px;
+    }
+
+    .value-list li::before {
+      left: 18px;
+      top: 22px;
     }
   }
 
@@ -762,8 +783,8 @@
     </a>
     <div class="nav-links" id="navLinks">
       <a href="/">Home</a>
-      <a href="/services/" class="active">Services</a>
-      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/services/">Services</a>
+      <a href="/privacy-policy/" class="active">Privacy Policy</a>
       <a href="/terms-of-service/">Terms of Service</a>
     </div>
     <a class="nav-cta" href="/#download">Download for Android</a>
@@ -773,76 +794,42 @@
 
 <header class="page-hero">
   <div class="wrap">
-    <span class="eyebrow"><i class="fas fa-briefcase" style="margin-right: 6px;"></i> Services</span>
-    <h1>Everything JobJet takes off your plate</h1>
-    <p class="lede">Six connected services, built around one goal: cutting the repetitive work out of applying for jobs.</p>
+    <span class="eyebrow"><i class="fas fa-shield-halved" style="margin-right: 6px;"></i> Privacy Policy</span>
+    <h1>Your data, handled with care</h1>
+    <p class="lede">This page explains what information JobJet collects, how it's used, and the choices you have. We only collect what's needed to help you apply for jobs faster.</p>
+    <p style="color: var(--text-soft); font-size: 0.92rem;">Last updated: September 2026</p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <div class="grid">
-      <div class="card">
-        <div class="icon"></div>
-        <h3>Smart Job Discovery</h3>
-        <p>Search by location, work type, and company category, and JobJet finds job opportunities so you can focus on positions that actually match your goals.</p>
-      </div>
-      <div class="card">
-        <div class="icon"></div>
-        <h3>AI-Powered Applications</h3>
-        <p>Generate a personalized application email for each role with AI, instead of writing the same message over and over.</p>
-      </div>
-      <div class="card">
-        <div class="icon"></div>
-        <h3>Gmail Integration</h3>
-        <p>Connect your Gmail account once, and send every application straight from JobJet through your own inbox.</p>
-      </div>
-      <div class="card">
-        <div class="icon"></div>
-        <h3>Resume &amp; File Attachments</h3>
-        <p>Set your resume and other documents up once, and JobJet keeps them ready to attach to every application.</p>
-      </div>
-      <div class="card">
-        <div class="icon"></div>
-        <h3>Batch Applications</h3>
-        <p>Select multiple companies and roles at once, and let JobJet streamline the repetitive parts of applying to each one.</p>
-      </div>
-      <div class="card">
-        <div class="icon"></div>
-        <h3>Application Tracking</h3>
-        <p>See what's been sent, what's been replied to, and what's still pending, all organized in one applications dashboard.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="policy-content">
+      <h2>1. Information we collect</h2>
+      <p>When you create a JobJet account, we collect basic profile details such as your name, email address, and resume information. When you connect your Gmail account, JobJet accesses only what's required to draft and send job application emails on your behalf — we do not read, store, or share the rest of your inbox.</p>
 
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="tag">How it works</span>
-      <h2>From account to applied, in four steps</h2>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num">01</div>
-        <h3>Create Your Account</h3>
-        <p>Set up your JobJet account and get started.</p>
-      </div>
-      <div class="step">
-        <div class="num">02</div>
-        <h3>Connect Gmail</h3>
-        <p>Securely connect your Gmail account to send applications.</p>
-      </div>
-      <div class="step">
-        <div class="num">03</div>
-        <h3>Discover Opportunities</h3>
-        <p>Find jobs that match your interests and career goals.</p>
-      </div>
-      <div class="step">
-        <div class="num">04</div>
-        <h3>Apply</h3>
-        <p>Create personalized application emails, attach your documents, and send your applications.</p>
-      </div>
+      <h2>2. How we use your information</h2>
+      <p>We use your information to power core JobJet features: finding relevant job opportunities, generating AI-assisted application emails, attaching your resume, sending applications through your connected Gmail account, and tracking replies. We do not sell your personal data to third parties.</p>
+
+      <h2>3. Gmail account access</h2>
+      <p>JobJet's use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements. Gmail access is used solely to send applications and track responses on your behalf, and is never used for advertising.</p>
+
+      <h2>4. Data storage and security</h2>
+      <p>Your data is stored securely and access is restricted to what's needed to operate JobJet. We use industry-standard safeguards to protect your information from unauthorized access, alteration, or disclosure.</p>
+
+      <h2>5. Data sharing</h2>
+      <p>We do not sell or rent your personal information. We may share limited data with service providers who help us operate JobJet (such as hosting and email delivery), and only to the extent necessary for them to perform those services.</p>
+
+      <h2>6. Your choices</h2>
+      <p>You can disconnect your Gmail account, update your profile information, or delete your JobJet account at any time. Deleting your account removes your stored data from our systems, except where retention is required by law.</p>
+
+      <h2>7. Children's privacy</h2>
+      <p>JobJet is not directed at individuals under the age of 16, and we do not knowingly collect personal information from children.</p>
+
+      <h2>8. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. Material changes will be reflected by updating the "last updated" date at the top of this page.</p>
+
+      <h2>9. Contact us</h2>
+      <p>If you have questions about this Privacy Policy or how your data is handled, reach out to us at <a href="mailto:support@jobjet-jobs.in" style="color: var(--primary); font-weight: 600;">support@jobjet-jobs.in</a>.</p>
     </div>
   </div>
 </section>

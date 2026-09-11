@@ -461,6 +461,7 @@
       box-shadow: var(--shadow-md);
       transition: var(--transition);
       background: white;
+      flex-shrink: 0;
     }
 
     .hero-screens .screens img:hover {
@@ -875,8 +876,27 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-screens .screens {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 14px;
+        padding: 6px 24px 18px;
+        margin: 0 -24px;
+        scrollbar-width: none;
+      }
+
+      .hero-screens .screens::-webkit-scrollbar {
+        display: none;
+      }
+
       .hero-screens .screens img {
-        max-width: 100%;
+        width: 128px;
+        max-width: 128px;
+        border-radius: 16px;
+        scroll-snap-align: start;
       }
 
       .footer-inner {
@@ -979,7 +999,8 @@
     <div class="nav-links" id="navLinks">
       <a href="/" class="active">Home</a>
       <a href="/services/">Services</a>
-      <a href="/team/">Team</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/terms-of-service/">Terms of Service</a>
     </div>
     <a class="nav-cta" href="#download">Download for Android</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
@@ -1213,7 +1234,8 @@
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/services/">Services</a>
-      <a href="/team/">Team</a>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <a href="/terms-of-service/">Terms of Service</a>
     </div>
     <span>&copy; 2026 JobJet. All rights reserved.</span>
   </div>
