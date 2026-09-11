@@ -370,15 +370,12 @@
       align-items: center;
     }
 
-    /* HERO IMAGE: flat, no border, no shadow */
+    /* HERO IMAGE: real photo, rounded with soft shadow */
     .hero-art img {
-      width: 100%;
-      max-width: 340px;
+     
+      max-width: 500px;
       display: block;
-      border: none !important;
-      box-shadow: none !important;
-      outline: none !important;
-      background: transparent !important;
+      
     }
 
     .eyebrow {
@@ -620,6 +617,103 @@
       font-size: 0.93rem;
     }
 
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials {
+      background: rgba(248, 249, 252, 0.6);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 44px;
+    }
+
+    .testi-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 28px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .testi-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: #c7d2fe;
+    }
+
+    .testi-stars {
+      color: #f59e0b;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    .testi-quote {
+      color: var(--text-dim);
+      font-size: 0.96rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .testi-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .testi-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .testi-person .who h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .testi-person .who span {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 52px;
+      text-align: center;
+    }
+
+    .stat-row .stat b {
+      display: block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-row .stat span {
+      color: var(--text-soft);
+      font-size: 0.88rem;
+    }
+
     /* CTA section */
     .cta {
       background: linear-gradient(145deg, #1e1b4b, #312e81);
@@ -818,6 +912,10 @@
       .global-bg .dot {
         display: none;
       }
+
+      .stat-row {
+        gap: 28px;
+      }
     }
 
     /* mobile nav open state */
@@ -902,7 +1000,7 @@
       </div>
     </div>
     <div class="hero-art">
-      <img src="images/logo.png" alt="JobJet app icon">
+      <img src="images/hero-photo.webp" alt="Professional smiling in a meeting, representing JobJet users">
     </div>
   </div>
 </header>
@@ -1003,6 +1101,97 @@
   </div>
 </section>
 
+<!-- TESTIMONIALS: happy users after downloading -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Loved by job seekers</span>
+      <h2>People who switched to JobJet aren't going back</h2>
+      <p>A few of the thousands of applications sent every week through JobJet.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">I used to spend my whole evening writing the same email with a different company name. JobJet cut that down to two minutes, and I've already got three interview calls this month.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#4f46e5;">RS</div>
+          <div class="who">
+            <h4>Riya Sharma</h4>
+            <span>Frontend Developer, Pune</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Honestly wasn't expecting much from another job app, but the AI-written emails actually sound like me, not a template. Attaching my resume and sending straight from Gmail is such a relief.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#7c3aed;">AK</div>
+          <div class="who">
+            <h4>Aman Kumar</h4>
+            <span>BCA Graduate, Ahmedabad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Applying to 15-20 companies a day used to feel impossible. Now I track every application in one screen and know exactly who I've already messaged.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#0ea5e9;">PP</div>
+          <div class="who">
+            <h4>Priya Patel</h4>
+            <span>HR Executive, Surat</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">The batch apply feature alone is worth downloading it for. I found a data analyst role through the discovery tab that I would have completely missed otherwise.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#16a34a;">VJ</div>
+          <div class="who">
+            <h4>Vikram Joshi</h4>
+            <span>Data Analyst, Vadodara</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">My inbox used to be a mess of copy-pasted follow-ups. With JobJet everything is organized and I actually look forward to applying instead of dreading it.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#ea580c;">SM</div>
+          <div class="who">
+            <h4>Sneha Mehta</h4>
+            <span>UI/UX Designer, Rajkot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">Recommended it to my entire final-year batch. It's the first app that actually understands that job hunting is repetitive work, and fixes that instead of just listing jobs.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#db2777;">HD</div>
+          <div class="who">
+            <h4>Harsh Desai</h4>
+            <span>Final Year BCA Student, Nadiad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><b>12,000+</b><span>Applications sent</span></div>
+      <div class="stat"><b>4.9/5</b><span>Average rating</span></div>
+      <div class="stat"><b>3,400+</b><span>Active job seekers</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="download">
   <div class="wrap cta">
     <h2>Ready to Apply Smarter?</h2>
@@ -1022,4 +1211,23 @@
       JobJet
     </a>
     <div class="footer-links">
-      <a href="/">Home
+      <a href="/">Home</a>
+      <a href="/services/">Services</a>
+      <a href="/team/">Team</a>
+    </div>
+    <span>&copy; 2026 JobJet. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
+</script>
+
+</body>
+</html>
